@@ -15,5 +15,5 @@ Solving LeetCode Problems Everyday with Our NYU Students' Supervision
 6. If participants have finished more than 500 problems, she/he would be renowed for her/his achievement, and she/he would not be punished for not solving more than 5 problems everyday.
 7. If participants quit our project without any reasonable explanation, she/he would face 50 US dollars punishments, and would be hanged up on our README website. 
 8. Every participants can read others project for learning but have no other operation permission, participants should respect others work.
-### Attributor
+### Contributors
 ©William Eric Cheung

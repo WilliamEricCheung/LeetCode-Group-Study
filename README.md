@@ -17,3 +17,4 @@ Solving LeetCode Problems Everyday with Our NYU Students' Supervision
 8. Every participants can read others project for learning but have no other operation permission, participants should respect others work.
 ### Contributors
 ©William Eric Cheung
+LegalName: YuFan

@@ -4,7 +4,8 @@ import java.util.List;
 import java.util.ListIterator;
 
 class ReplaceWords_648 {
-    class Solution {
+    //original version, slow, 200+ms;
+    class Solution1 {
         class TrieNode {
             public TrieNode() {
                 children = new TrieNode[26];
@@ -19,7 +20,7 @@ class ReplaceWords_648 {
         public void insert(String word) {
             TrieNode p = root;
             for (int i = 0; i < word.length(); i++){
-                if (p.is_word == true)
+                if (p.is_word == true)  //not necessary;
                     return;
                 int index = (int) (word.charAt(i) - 'a');
                 if(p.children[index] == null) {
@@ -32,21 +33,25 @@ class ReplaceWords_648 {
 
         public String replace(String word) {
             TrieNode p = root;
-            String replacedWord = "";
+            boolean hasPrefix = false;
+            int endIndex = 0;
             for (int i = 0; i < word.length(); i++) {
-                if (p.is_word == true)
+                if (p.is_word == true) {
+                    hasPrefix = true;
+                    endIndex = i;
                     break;
+                }
                 char letter = word.charAt(i);
                 int index = (int) (letter - 'a');
                 if (p.children[index] == null || i == word.length()) {
-                    replacedWord = word;
+                    hasPrefix = false;
                     break;
                 }
                 else {
-                    replacedWord += letter;
                     p = p.children[index];
                 }
             }
+            String replacedWord = hasPrefix ? word.substring(0, endIndex) : word;
             return replacedWord;
         }
 
@@ -74,7 +79,45 @@ class ReplaceWords_648 {
         }
     }
 
-    static void main(String[] args) {
+    //improved version; official solution;
+    //new api: String.toCharArray();
+    //new class: StringBuilder; StringBuilder.append();StringBuilder.toString(); StringBuilder.length();
+    class Solution2{
+        class TrieNode {
+            TrieNode[] children;
+            String word;
+            TrieNode() {
+                children = new TrieNode[26];
+                word = null;
+            }
+        }
+        public String replaceWords(List<String> dict, String sentence){
+            TrieNode root = new TrieNode();
+            for(String word: dict) {
+                TrieNode cur = root;
+                for(char letter: word.toCharArray()){
+                    int index = (int)(letter - 'a');
+                    if (cur.children[index] == null)
+                        cur.children[index] = new TrieNode();
+                    cur = cur.children[index];
+                }
+                cur.word = word;
+            }
 
+            StringBuilder ans = new StringBuilder();
+
+            for(String word: sentence.split("\\s+")) {
+                TrieNode cur = root;
+                for(char letter: word.toCharArray()) {
+                    int index = (int) (letter - 'a');
+                    if (cur.children[index] == null || cur.word != null)
+                        break;
+                    cur = cur.children[index];
+                }
+                if(ans.length()>0)   ans.append(" ");
+                ans.append(cur.word == null ? word : cur.word);
+            }
+            return ans.toString();
+        }
     }
 }

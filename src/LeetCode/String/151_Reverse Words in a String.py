@@ -10,4 +10,5 @@ class Solution:
 
             res += a[n - i - 1] + ' '
         res = res[:len(res) - 1]
+
         return res

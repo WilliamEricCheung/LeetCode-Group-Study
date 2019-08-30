@@ -17,6 +17,10 @@ public class Main {
         ContainsDuplicate_217 result = new ContainsDuplicate_217();
         boolean results = result.containsDuplicate(nums);
         System.out.println(results);
+
+
+
+
     }
 
 }

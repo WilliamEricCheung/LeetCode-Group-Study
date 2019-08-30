@@ -2,15 +2,18 @@ from typing import List
 
 
 class Solution:
-    def removeDuplicates(self, nums: List[int]) -> int:
-
-        index=0
-        while(index<len(nums)):
-            if(index+1==len(nums)):
+    def moveZeroes(self, nums: List[int]) -> None:
+        """
+        Do not return anything, modify nums in-place instead.
+        """
+        count=0
+        l=len(nums)
+        while(1):
+            nums.remove(0)
+            if(l-count==len(nums)):
                 break
-            if(nums[index]==nums[index+1]):
-                nums.pop(index+1)
-                continue
             else:
-                index+=1
-        return len(nums)
+                count+=1
+
+        for i in range(count):
+            nums.append(0)

@@ -1,0 +1,20 @@
+class Solution(object):
+    def isValid(self,s):
+        bracket = {'(': 1, ')': 2, '[': 3, ']': 4, '{': 5, '}': 6}
+        a = []
+        if len(s) == 0:
+            return True;
+        for i in s:
+            num = bracket.get(i)
+            if num % 2 != 0:
+                a.append(num)
+            if num % 2 == 0:
+                if len(a) < 1:
+                    return False
+                if a[-1] != num-1:
+                    return False
+                if a[-1] == num-1:
+                    a.pop(-1)
+        if len(a) > 0:
+            return False
+        return True

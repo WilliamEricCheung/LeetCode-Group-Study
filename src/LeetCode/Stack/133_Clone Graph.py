@@ -6,6 +6,7 @@ class Node:
         self.neighbors = neighbors
 """
 class Solution:
+
     def cloneGraph(self, node):
           def dfs(node,reach):
             if node in reach:

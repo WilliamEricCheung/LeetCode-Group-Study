@@ -10,7 +10,7 @@ package zhiyuan.solution;
  */
 import java.util.*;
 
-class Solution {
+class ThreeSum {
     public List<List<Integer>> threeSum(int[] nums) {
         List<List<Integer>> res = new ArrayList<>();
         Arrays.sort(nums);

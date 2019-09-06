@@ -1,0 +1,18 @@
+class Solution:
+    def canJump(self, nums):
+        total = len(nums) - 1
+        cur = 0
+        for i in range(len(nums)):
+            if cur >= i:
+                cur = max(cur,i+nums[i])
+                if cur >= total:
+                    return True
+        return False
+
+
+    def canJump(self, nums: List[int]) -> bool:
+        lastpoint = len(nums) - 1
+        for i in range(len(nums) - 1, -1, -1):
+            if i + nums[i] >= lastpoint:
+                lastpoint = i
+        return lastpoint == 0

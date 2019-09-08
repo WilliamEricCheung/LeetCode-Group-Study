@@ -12,11 +12,9 @@ public class Main {
 
     public static void main(String[] args) {
 
-        int nums [] = new int[] {1,2,3,4,1};
-
-        ContainsDuplicate_217 result = new ContainsDuplicate_217();
-        boolean results = result.containsDuplicate(nums);
-        System.out.println(results);
+        String s = new String();
+        s = "helloworld";
+        System.out.println(s.charAt(0));
 
 
 

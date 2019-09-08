@@ -6,7 +6,7 @@ class Solution(object):
         :rtype: List[int]
         """
         minus=[]
-        print nums
+        
         for i in range(len(nums)):
             if nums[i] not in minus:
                 minus.append(target-nums[i])

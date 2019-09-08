@@ -1,0 +1,16 @@
+class Solution:
+    def maxArea(self, height) -> int:
+        maxArea = 0
+        l, r = 0, len(height) - 1
+        while(l<r):
+            curArea = min(height[l], height[r]) * (r - l)
+            maxArea = max(maxArea, curArea)
+            if height[l] < height[r]:
+                l += 1
+            else:
+                r -= 1
+        return maxArea
+
+
+求容器中能放水的最大体积
+采用双指针，两边容器较小的一边往中间移动，否则体积不增反减

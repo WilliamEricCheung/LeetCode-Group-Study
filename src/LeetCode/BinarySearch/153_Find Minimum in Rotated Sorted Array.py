@@ -7,6 +7,8 @@ class Solution(object):
         left = 0
         n = len(nums)
         right = n - 1
+        if (nums[right] > nums[left]):
+            return nums[left]
         while (right > left):
             mid = (right + left) // 2
 

@@ -13,9 +13,9 @@ public class Main {
     public static void main(String[] args) {
 
         String s = new String();
-        s = "helloworld";
-        System.out.println(s.charAt(0));
-
+        s = "hellowprld";
+        int a = s.indexOf(s.charAt(0),3);
+        System.out.println(a);
 
 
 

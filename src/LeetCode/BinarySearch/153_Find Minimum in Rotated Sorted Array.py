@@ -14,11 +14,11 @@ class Solution(object):
 
             if (nums[mid] >= nums[0] and nums[mid] > nums[mid + 1]):
                 return nums[mid + 1]
-            elif (nums[mid] < nums[0]):
+            elif (nums[mid] <= nums[0] and nums[mid] <= nums[right]):
 
-                right = mid
+                right -= 1
             else:
-                left = mid + 1
+                left += 1
         if (nums[left] > nums[0]):
             return nums[0]
         return nums[left]

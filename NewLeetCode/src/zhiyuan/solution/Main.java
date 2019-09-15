@@ -12,10 +12,11 @@ public class Main {
 
     public static void main(String[] args) {
 
-        String s = new String();
-        s = "hellowprld";
-        int a = s.indexOf(s.charAt(0),3);
-        System.out.println(a);
+       char a = 'b';
+       char b = 'a';
+       int res = 10;
+       res = a - b;
+        System.out.println(res);
 
 
 

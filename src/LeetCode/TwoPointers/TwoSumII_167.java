@@ -1,6 +1,6 @@
 package LeetCode.TwoPointers;
 
-public class TwoSumIIInputarrayissorted_167 {
+public class TwoSumII_167 {
     class Solution {
         public int[] twoSum(int[] numbers, int target) {
             int left = 0, right = numbers.length - 1;
